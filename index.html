@@ -331,7 +331,7 @@
 								);
 								StartStackingFrom -= 1;
 							}
-							console.log(STACKED_NOTIFICATIONS);
+							//#console.log(STACKED_NOTIFICATIONS);
 						}
 						//#Add a show all notification button
 					}
@@ -422,7 +422,7 @@
 						component.addEventListener("touchmove",
 							(tm) => {
 								clickedPositionX = tm.touches[0].pageX;
-								console.log("touched");
+								//#console.log("touched");
 								//
 								this.GetTransformation(component);
 
@@ -459,7 +459,7 @@
 						if (Math.abs(opacity) > 1) {
 							this.dismiss(component);
 						}
-						console.log(`filter: opactiy(${opacity})`);
+						//#console.log(`filter: opactiy(${opacity})`);
 						component.style["filter"] = `opacity(${opacity})`;
 					}
 				};
