@@ -1,34 +1,10 @@
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
 
 
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://iamhimansu.github.io/notification.js/">
+    <img src="./images/notification.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">notification.js</h3>
@@ -47,23 +23,20 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+Notifications play a significant role in enhancing user experiences, and helps the users to find what they are looking for.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should element DRY principles to the rest of your life :smile:
+Creating and managing notification is a tedious task, specially for web developer who are already busy in giving something new to the world, thus notification.js comes into play.
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have have contributed to expanding this template!
 
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
+* Your time should be focused on creating something amazing. A project that solves a problem and helps others :smile:
+* You shouldn't be doing the same tasks over and over like creating a everything from scratch.
+* However, notification.js is currently under development... 😒. 
+
 
 ### Dependencies
-
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-* [Bootstrap](https://getbootstrap.com)
+As Bootstrap framework is very commonly used, thus for icons and animations, notiification.js uses these two services.
+* [Bootstrap Icons](https://icons.getbootstrap.com)
 * [Animate CSS](https://animate.style)
 
 
@@ -71,58 +44,105 @@ This section should list any major frameworks that you built your project using.
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Just download the notification.js file, and get started with creating awesome notification.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+Download the ```dist``` folder , and get started with creating awesome notification.
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+1. Place `notification.min.css` file in the <head></head>.
+2. Example: 
+    ```HTML
+    <head>
+      <link rel="stylesheet" href="path/to/folder/notification.min.css" />
+    </head>
+    ```
+3. Place `notification.min.js` file before end of body tag
+4. Example:
+    ```HTML
+    <body>    
+      <script src="path/to/folder/notification.min.js"></script>
+    </body>
+    ```
+5. Add a `div` with class `.notification-container`
+6. Example:
+    ```HTML
+    <div class="notification-container">
+    </div>
    ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```JS
-   const API_KEY = 'ENTER YOUR API';
-   ```
-
-
+ 7. That's all. :smile:
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
   To create a notification
   
-  1st create a new object of Notification.
+  Just call the create method....
   Example: 
   ```JS
-  const Notification = new Notify();
-  ```
-  
-  After that, use .create method to create a new notification
-  Example:
-  ```JS
   Notification.create({
-  head:"",
-  body:"",
-  footer:"",
-  html:true,
+      head:"",
+      body:"",
+      footer:"",
+      html:"",
+      duration:"",
   });
   ```
+  
+Done... You should see a notification :blush:
 
 _For more examples, please refer to the [Documentation](https://iamhimansu.github.io/notification.js/.com)_
+## Configs
+  ```JS
+  Notification.configs({
+  stacking:true, //Default is set to true, 
+  //If stacking is set to true, notifications that are out of viewport will be hidden, and a `Show all` button will appear to show overflowed notifications. 
+  });
+  ```
+## Options 
 
+  ```JS
+  head:""  //The content inside heade will be inject into notificaation title,
+  body: "" //The content inside body will be injected into notification body,
+  footer: "" //The content inside footer will be injected into notification footer,
+  html: true, //Default is set to true, If html is set to false, all contents will be injected as text contents.
+  ```
+ ## Modifications
+ 1. The CSS file consists all the classes, you can edit according to your needs.
+ 2. Some common modification classes would be:
+ 3. `Notification header` edit:
+ 4. ```CSS
+      .notification-container > .notification > .notification-header {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 50px;
+        background-color: blanchedalmond;
+        height: 50px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+      }
+    ```
+ 5. `Notification footer` edit:
+ 6. ```CSS
+      .notification-container > .notification > .notification-footer {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        max-height: 50px;
+        background-color: #fdfdfd;
+        height: 50px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: row;
+      }
+    ```
+7. If you want to customize more, you always can.
+ 
+ ## Contribution
+ Any improvements from your side is most welcome :blush:
+ 
 <!-- LICENSE -->
 ## License
 
@@ -133,42 +153,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Instagram Username - [@himanshu_raj_07](https://www.instagram.com/himanshu_raj_07)
 
 Project Link: [https://github.com/iamhimansu/notification.js](https://github.com/iamhimansu/notification.js)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Img Shields](https://shields.io)
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Pages](https://pages.github.com)
-* [Animate.css](https://daneden.github.io/animate.css)
-* [Loaders.css](https://connoratherton.com/loaders)
-* [Slick Carousel](https://kenwheeler.github.io/slick)
-* [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
-* [Sticky Kit](http://leafo.net/sticky-kit)
-* [JVectorMap](http://jvectormap.com)
-* [Font Awesome](https://fontawesome.com)
-
-
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
