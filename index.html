@@ -419,27 +419,27 @@
 						//#===============================//
 						//#---------ON TOUCH MOVEMENT---//
 						//#===========================//
-						component.addEventListener("touchstart", (ts) => {
-							mousedown = true;
-							//
-							clickedPositionX = ts.touches[0].pageX;
-							console.log("touched");
-							//
-							this.GetTransformation(component);
-							component.addEventListener("touchmove", (tm) => {
-								isDragging = true;
-								if (mousedown === true && isDragging === true) {
-									//#Start dragging movement
-									let targetPos =
-										elementPositionX + tm.touches[0].pageX - clickedPositionX;
-									this.HandleDragging(component, tm, targetPos);
-								}
-								window.addEventListener("touchend", function () {
-									mousedown = false;
-									isDragging = false;
-								});
-							});
-						});
+						component.addEventListener("touchmove",
+							(tm) => {
+								clickedPositionX = tm.touches[0].pageX;
+								console.log("touched");
+								//
+								this.GetTransformation(component);
+
+								//#Start dragging movement
+								let targetPos = elementPositionX + tm.touches[0].pageX;
+								this.HandleDragging(component, tm, targetPos);
+
+								component.addEventListener(
+									"touchend",
+									function () {
+										component.removeEventListener("touchmove");
+									},
+									false
+								);
+							},
+							false
+						);
 					});
 				};
 				this.HandleDragging = function (component, event, toNewPosition) {
