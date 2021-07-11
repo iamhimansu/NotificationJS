@@ -1,17 +1,4 @@
 //Globals
-Array.prototype.removeArrayValue = function () {
-	var what,
-		a = arguments,
-		L = a.length,
-		ax;
-	while (L && this.length) {
-		what = a[--L];
-		while ((ax = this.indexOf(what)) !== -1) {
-			this.splice(ax, 1);
-		}
-	}
-	return this;
-};
 const NotificationContainer = document.querySelector(".notification-container");
 function Notify() {
 	//
