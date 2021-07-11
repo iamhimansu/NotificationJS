@@ -4,7 +4,7 @@
 <br />
 <p align="center">
   <a href="https://iamhimansu.github.io/notification.js/">
-    <img src="./images/notification.png" alt="Logo" width="80" height="80">
+    <img src="./images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">notification.js</h3>
