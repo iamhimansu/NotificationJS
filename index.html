@@ -395,6 +395,7 @@
 					//#-------- ON MOUSE EVENT---------//
 					//#=============================//
 					component.addEventListener("mousedown", (md) => {
+						md.preventDefault();
 						mousedown = true;
 						//
 						clickedPositionX = md.pageX;
@@ -402,6 +403,7 @@
 						this.GetTransformation(component);
 
 						component.addEventListener("mousemove", (e) => {
+							e.preventDefault();
 							isDragging = true;
 
 							if (mousedown === true && isDragging === true) {
