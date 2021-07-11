@@ -310,7 +310,7 @@ function Notify() {
 				"touchmove",
 				(tm) => {
 					clickedPositionX = tm.touches[0].pageX;
-				//	console.log("touched");
+					//	console.log("touched");
 					//
 					this.GetTransformation(component);
 
@@ -378,5 +378,5 @@ function Notify() {
 			place.innerHTML = content;
 		}
 	};
-
+}
 const Notification = new Notify();
