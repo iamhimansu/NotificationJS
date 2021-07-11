@@ -433,7 +433,7 @@
 								component.addEventListener(
 									"touchend",
 									function () {
-										component.removeEventListener("touchmove");
+										component.removeEventListener("touchmove", tm, false);
 									},
 									false
 								);
