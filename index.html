@@ -11,7 +11,8 @@
 		<title>notification.js</title>
 	</head>
 	<body>
-		<div style="position: absolute; right: 10px; bottom: 20px; width: 100%">
+		<div class="notification-container" style="height: 80vh"></div>
+		<div style="position: relative; right: 10px; bottom: 20px; width: 100%">
 			<h5 class="px-4">Different types of notifications</h5>
 			<div class="d-flex flex-wrap p-4">
 				<button class="btn btn-primary m-1 title">Title</button
@@ -26,9 +27,8 @@
 			</div>
 		</div>
 
-		<div class="notification-container"></div>
-		<script src="./utils.js"></script>
-		<script src="./dist/js/notification.min.js"></script>
+		<script src="./notification.js"></script>
+		<!-- <script src="./utils.js"></script> -->
 		<script>
 			//cnt => CreateNotificationTitle
 			const cnt = document.querySelector(".title");
@@ -47,6 +47,9 @@
 			cnf.addEventListener("click", () => {
 				Notification.create({
 					footer: "Hello, I contain only footer",
+					timebar: true,
+					timeout: 60,
+					focus: false,
 				});
 			});
 			const cntb = document.querySelector(".title-body");
