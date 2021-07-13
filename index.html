@@ -11,39 +11,230 @@
 		<title>notification.js</title>
 	</head>
 	<body>
-		<div class="notification-container" style="height: 80vh"></div>
-		<div style="position: relative; right: 10px; bottom: 20px; width: 100%">
-			<h5 class="px-4">Different types of notifications</h5>
-			<div class="d-flex flex-wrap p-4">
-				<button class="btn btn-primary m-1 title">Title</button
-				><button class="btn btn-primary m-1 body">Body</button
-				><button class="btn btn-primary m-1 footer">Footer</button
-				><button class="btn btn-primary m-1 title-body">Title, body</button
-				><button class="btn btn-primary m-1 body-footer">Body, Footer</button>
-				<button class="btn btn-primary m-1 title-footer">Title, Footer</button>
-				<button class="btn btn-primary m-1 title-body-footer">
-					Title, Body, Footer
-				</button>
-				<button class="btn btn-primary m-1 closable">
-					I can be closed
-				</button>
-				<hr />
-				<button class="btn btn-primary m-1 time-1s">
-					I will wait for 1 second
-				</button>
-				<button class="btn btn-primary m-1 time-infinity">
-					I am immortal ✌
-				</button>
-				<button class="btn btn-primary m-1 time-bar">
-					I have time a time bar 😍
-				</button>
-				<button class="btn btn-primary m-1 pause-on-focus">
-					Hover over me to pause my time.
-				</button>
+		<style>
+			.accordion-button:not(.collapsed) {
+    color: #000;
+    background-color:blanchedalmond;
+    box-shadow: none;
+				border-radius: 5px;
+				padding: 20px;
+				margin-top: 5px;
+}
+.language-markup{
+	margin: 0 !important;
+}
+.accordion-item{
+	border:0 !important
+}
+		</style>
+		<nav class="navbar navbar-light bg-light">
+			<div class="container-fluid d-flex justify-content-center">
+				<a
+					class="navbar-brand"
+					href="https://github.com/iamhimansu/notification.js"
+				>
+					<img
+						src="https://github.com/iamhimansu/notification.js/blob/main/images/logo.png"
+						alt=""
+						width="30"
+						height="24"
+						class="d-inline-block align-text-top"
+					/>
+					notification.js
+				</a>
 			</div>
-		</div>
+		</nav>
+		<div class="container container-md">
+<div class="row">
 
+	<div class="col-md-6 my-md-1">
+		<div class="my-4">
+			<div class="accordion" id="accordionExample">
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingThree">
+							<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+									Examples
+							</button>
+					</h2>
+					<div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+							<div class="accordion-body p-0">
+								<div class="d-flex flex-wrap p-4">
+									<button class="btn btn-primary m-1 title">Title</button
+									><button class="btn btn-primary m-1 body">Body</button
+									><button class="btn btn-primary m-1 footer">Footer</button
+									><button class="btn btn-primary m-1 title-body">Title, body</button
+									><button class="btn btn-primary m-1 body-footer">Body, Footer</button>
+									<button class="btn btn-primary m-1 title-footer">Title, Footer</button>
+									<button class="btn btn-primary m-1 title-body-footer">
+										Title, Body, Footer
+									</button>
+									<button class="btn btn-primary m-1 closable">
+										I can be closed
+									</button>
+									<hr />
+									<button class="btn btn-primary m-1 time-1s">
+										I will wait for 1 second
+									</button>
+									<button class="btn btn-primary m-1 time-infinity">
+										I am immortal ✌
+									</button>
+									<button class="btn btn-primary m-1 time-bar">
+										I have time a time bar 😍
+									</button>
+									<button class="btn btn-primary m-1 pause-on-focus">
+										Hover over me to pause my time.
+									</button>
+								</div>
+							</div>
+					</div>
+			</div>
+
+				<div class="accordion-item">
+						<h2 class="accordion-header" id="headingOne">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-controls="collapseOne">
+										Installation
+								</button>
+						</h2>
+						<div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+								<div class="accordion-body p-0">
+									<pre><code class="language-markup">
+										&lt;!DOCTYPE html>
+										&lt;html lang="en">
+										&lt;head>
+											&lt;meta charset="UTF-8">
+											&lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
+											&lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+											&lt;title>Document&lt;/title>
+											&lt;link rel="stylesheet" href="path/to/folder/notification.min.css">
+										&lt;/head>
+										&lt;body>
+											&lt;div class="notification-container">
+											&lt;!--
+												This container contains all the notifications,
+												you can position it according to your needs.
+											-->
+											&lt;/div>
+											&lt;script src="path/to/folder/notification.min.js"></script>
+										&lt;/body>
+										&lt;/html>
+											
+									</code></pre>
+								</div>
+						</div>
+				</div>
+				<div class="accordion-item">
+						<h2 class="accordion-header" id="headingTwo">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+										Basic usage
+								</button>
+						</h2>
+						<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+								<div class="accordion-body p-0">
+									<pre><code class="language-markup">
+										&lt;!DOCTYPE html>
+										&lt;html lang="en">
+										&lt;head>
+											&lt;meta charset="UTF-8">
+											&lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
+											&lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+											&lt;title>Document&lt;/title>
+											&lt;link rel="stylesheet" href="path/to/folder/notification.min.css">
+										&lt;/head>
+										&lt;body>
+											&lt;div class="notification-container">
+											&lt;!--
+												This container contains all the notifications,
+												you can position it according to your needs.
+											-->
+											&lt;/div>
+											&lt;script src="path/to/folder/notification.min.js">&lt;/script>
+											&lt;script>
+												Notification.create({
+													body:"Hey, I'm a notification 😍",
+												});
+											&lt;/script>
+										&lt;/body>
+										&lt;/html>
+											
+									</code></pre>
+									
+								</div>
+						</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingTwo">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#advance" aria-expanded="false" aria-controls="advance">
+									Advance usage
+							</button>
+					</h2>
+					<div id="advance" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+							<div class="accordion-body p-0">
+								<pre><code class="language-markup">
+									&lt;!DOCTYPE html>
+									&lt;html lang="en">
+									&lt;head>
+										&lt;meta charset="UTF-8">
+										&lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
+										&lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+										&lt;title>Document&lt;/title>
+										&lt;link rel="stylesheet" href="path/to/folder/notification.min.css">
+									&lt;/head>
+									&lt;body>
+										&lt;div class="notification-container">
+										&lt;!--
+											This container contains all the notifications,
+											you can position it according to your needs.
+										-->
+										&lt;/div>
+										&lt;script src="path/to/folder/notification.min.js">&lt;/script>
+										&lt;script>
+											Notification.configs({
+												stacking: true, // Default set to true,
+												// Removes notifications that are out of viewport, and adds a show all button
+											});
+											Notification.create({
+												header: "My header",
+												body: "Hey, I'm a notification 😍",
+												footer: "My footer",
+												timeout: 2, // when set to Infinity, notification will never auto close.  
+												pause: true, // Default set to false, pauses timeout of notification 
+												timebar: true // Default set to false, Adds a progress bar showing timeout 
+												dismiss: true, // Default set to false, Adds a close button inside notification
+											});
+										&lt;/script>
+									&lt;/body>
+									&lt;/html>
+										
+								</code></pre>
+								
+							</div>
+					</div>
+			</div>
+
+				
+		</div>
+	</div>
+</div>
+<div class="col-md-6 my-md-1">
+	<div class="notification-container" style="height: 100vh;"></div>
+</div>
+		</div>
+	
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" ></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
 		<script src="./dist/js/notification.min.js"></script>
+		<script type="text/javascript">
+			// Optional
+			Prism.plugins.NormalizeWhitespace.setDefaults({
+				'remove-trailing': true,
+				'remove-indent': true,
+				'left-trim': true,
+				'right-trim': true,
+			});
+			</script>
+		<!-- <script src="./utils.js"></script> -->
 		<script>
 			//cnt => CreateNotificationTitle
 			const cnt = document.querySelector(".title");
@@ -133,3 +324,4 @@
 		</script>
 	</body>
 </html>
+
