@@ -62,6 +62,7 @@
 	> .notification-body-content {
 	padding: 10px 15px;
 	width: 100%;
+	background-color: white;
 }
 .notification-container > .notification > .notification-footer {
 	width: 100%;
