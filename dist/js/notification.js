@@ -43,7 +43,7 @@ function Notify() {
 		timeout: 5,
 		dismiss: true,
 		timebar: true,
-		focus: true,
+		pause: true,
 		// save initial values
 		init: function () {
 			var origValues = {};
@@ -87,7 +87,7 @@ function Notify() {
 	this.template = function () {
 		//# div.notification
 		const Notification = document.createElement("div");
-		let NotificationInFocus = false;
+		let NotificationInpause = false;
 		Notification.classList.add("notification");
 		Notification.classList.add("animate__animated", "animate__fadeInUp");
 
@@ -166,7 +166,7 @@ function Notify() {
 			}
 
 			let TimeBar = setInterval(() => {
-				if (NotificationInFocus === false) {
+				if (NotificationInpause === false) {
 					InitialTimeStart += 1;
 				}
 				if (NOTIFICATION.timebar === true) {
@@ -193,12 +193,12 @@ function Notify() {
 					});
 				}
 			}, 1000); //#Updating every 0.1 seconds for smoother transition
-			if (NOTIFICATION.focus === true) {
+			if (NOTIFICATION.pause === true) {
 				Notification.addEventListener("mouseover", () => {
-					NotificationInFocus = true;
+					NotificationInpause = true;
 				});
 				Notification.addEventListener("mouseleave", () => {
-					NotificationInFocus = false;
+					NotificationInpause = false;
 				});
 			}
 		}
