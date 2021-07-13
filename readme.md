@@ -89,7 +89,7 @@ Download the ```dist``` folder , and get started with creating awesome notificat
   
 Done... You should see a notification :blush:
 
-_For more examples, please refer to the [Documentation](https://iamhimansu.github.io/notification.js/.com)_
+_For more examples, please refer to the [Documentation](https://iamhimansu.github.io/notification.js/)_
 ## Configs
   ```JS
   Notification.configs({
