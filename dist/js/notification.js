@@ -87,7 +87,6 @@ function Notify() {
 	this.template = function () {
 		//# div.notification
 		const Notification = document.createElement("div");
-		let NotificationInpause = false;
 		Notification.classList.add("notification");
 		Notification.classList.add("animate__animated", "animate__fadeInUp");
 
@@ -145,13 +144,17 @@ function Notify() {
 			//#Append to Notification footer
 			Notification.appendChild(NotificationFooter);
 		}
+		this.draggable(Notification);
 
 		//
 		if (
 			typeof NOTIFICATION.timeout !== "null" ||
 			typeof NOTIFICATION.timeout !== "Infinity"
 		) {
-			let InitialTimeStart = 0, //+1 becoz of transition effect
+			let NotificationInFocus = false;
+
+			let InitialTimeStart = 0,
+				//+1 becoz of transition effect
 				FinalTime = NOTIFICATION.timeout;
 			//#Append timebar
 			const NotificationTimebarContainer = document.createElement("div");
@@ -165,11 +168,12 @@ function Notify() {
 				Notification.lastElementChild.after(NotificationTimebarContainer);
 			}
 
+			// console.log(NOTIFICATION.timebar);
 			let TimeBar = setInterval(() => {
-				if (NotificationInpause === false) {
+				if (NotificationInFocus === false) {
 					InitialTimeStart += 1;
 				}
-				if (NOTIFICATION.timebar === true) {
+				if (NotificationInFocus === false) {
 					NotificationTimebar.style["width"] =
 						(InitialTimeStart / FinalTime) * 100 + "%";
 				}
@@ -193,16 +197,18 @@ function Notify() {
 					});
 				}
 			}, 1000); //#Updating every 0.1 seconds for smoother transition
+
 			if (NOTIFICATION.pause === true) {
-				Notification.addEventListener("mouseover", () => {
-					NotificationInpause = true;
+				Notification.addEventListener("mouseenter", () => {
+					NotificationInFocus = true;
+					// console.log(NotificationInFocus);
 				});
 				Notification.addEventListener("mouseleave", () => {
-					NotificationInpause = false;
+					NotificationInFocus = false;
+					// console.log(NotificationInFocus);
 				});
 			}
 		}
-
 		//#Dismiss notification
 		if (NOTIFICATION.dismiss === true) {
 			const DismissNotification = document.createElement("span");
@@ -213,7 +219,6 @@ function Notify() {
 				this.dismiss(Notification);
 			});
 			Notification.firstElementChild.append(DismissNotification);
-			this.draggable(Notification);
 		}
 		//#Set time delay
 
