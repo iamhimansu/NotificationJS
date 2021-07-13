@@ -24,6 +24,19 @@
 				<button class="btn btn-primary m-1 title-body-footer">
 					Title, Body, Footer
 				</button>
+				<hr/>
+				<button class="btn btn-primary m-1 time-1s">
+					I will wait for 1 second
+				</button>
+				<button class="btn btn-primary m-1 time-infinity">
+					I am immortal ✌
+				</button>
+				<button class="btn btn-primary m-1 time-bar">
+					I have time a time bar 😍
+				</button>
+				<button class="btn btn-primary m-1 pause-on-focus">
+					Hover over me to pause my time.
+				</button>
 			</div>
 		</div>
 
@@ -47,9 +60,6 @@
 			cnf.addEventListener("click", () => {
 				Notification.create({
 					footer: "Hello, I contain only footer",
-					timebar: true,
-					timeout: 60,
-					focus: false,
 				});
 			});
 			const cntb = document.querySelector(".title-body");
@@ -79,6 +89,34 @@
 					head: "Hello, I am a title",
 					body: "This is my body",
 					footer: "This is my footer",
+				});
+			});
+			const cnt1s = document.querySelector(".time-1s");
+			cnt1s.addEventListener("click", () => {
+				Notification.create({
+					body: "I will hide after 1 second",
+				});
+			});
+			const cntInf = document.querySelector(".time-infinity");
+			cntInf.addEventListener("click", () => {
+				Notification.create({
+					body: "I will never go.",
+					timeout:Infinity,
+				});
+			});
+			const cnttb = document.querySelector(".time-bar");
+			cnttb.addEventListener("click", () => {
+				Notification.create({
+					body: "I will never go.",
+					timebar:true,
+				});
+			});
+			const cntpof = document.querySelector(".pause-on-focus");
+			cntpof.addEventListener("click", () => {
+				Notification.create({
+					body: "Hover over me to pause time for me",
+					timebar:true,
+					focus:true,
 				});
 			});
 		</script>
