@@ -41,9 +41,9 @@ function Notify() {
 		html: true,
 		delay: 0,
 		timeout: 5,
-		dismiss: true,
-		timebar: true,
-		pause: true,
+		dismiss: false,
+		timebar: false,
+		pause: false,
 		// save initial values
 		init: function () {
 			var origValues = {};
